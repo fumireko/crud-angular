@@ -23,7 +23,8 @@ Este repositório contém um aplicativo CRUD simples desenvolvido em Angular, pe
 `cd nome-do-repositorio`
 
 3. Instale as dependências do projeto:
-`npm install`
+`npm install --save @fortawesome/fontawesome-free`
+`npm install --save bootstrap`
 
 4. Inicie o servidor de desenvolvimento:
 `ng serve`
