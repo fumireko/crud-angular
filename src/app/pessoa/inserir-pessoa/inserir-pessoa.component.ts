@@ -4,6 +4,7 @@ import { Pessoa } from 'src/app/shared/models/pessoa.model';
 import { PessoaService } from '../services/pessoa.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-inserir-pessoa',
   templateUrl: './inserir-pessoa.component.html',
