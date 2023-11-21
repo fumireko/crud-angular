@@ -4,7 +4,12 @@
     <form #formPessoa="ngForm">
         <div class="form-group">
             <label for="nome">Nome:</label>
-            <input type="text" class="form-control" id="nome" name="nome" [(ngModel)]="pessoa.nome" #nome="ngModel" minlength="2" required>
+            <input type="text" class="form-control"
+            id="nome" name="nome"
+            [(ngModel)]="pessoa.nome"
+            #nome="ngModel"
+            minlength="2"
+            required>
             <div *ngIf="nome.errors && (nome.dirty || nome.touched)" class="alert alert-danger">
                 <div [hidden]="!nome.errors?.['required']" >Digite o nome da pessoa.</div>
                 <div [hidden]="!nome.errors?.['minlength']">O nome deve conter ao menos 2 caracteres.</div>
@@ -13,9 +18,9 @@
             <input type="text" class="form-control" 
             id="idade" name="idade" 
             [(ngModel)]="pessoa.idade" 
-            #idade="ngModel" 
-            numerico
+            #idade="ngModel"
             minimoValidator
+            numerico 
             required>
             <div class="alert alert-danger" *ngIf="idade.errors && (idade.dirty || idade.touched)">
                 <div [hidden]="!idade.errors?.['required']">Digite a idade da pessoa.</div>

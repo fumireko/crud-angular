@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PessoaModule } from './pessoa/pessoa.module';
 import { MinimoValidatorDirective } from './shared/directives/minimo-validator.directive';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { MinimoValidatorDirective } from './shared/directives/minimo-validator.d
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PessoaModule
+    PessoaModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

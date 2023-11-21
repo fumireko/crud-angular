@@ -15,6 +15,7 @@ export class EditarPessoaComponent implements OnInit{
 
   @ViewChild("formPessoa") formPessoa!: NgForm;
   pessoa!: Pessoa;
+  private id = this.route.snapshot.params['id'];
 
   constructor(
     private pessoaService: PessoaService,
@@ -23,12 +24,9 @@ export class EditarPessoaComponent implements OnInit{
   ){}
 
   ngOnInit(): void {
-      let id = +this.route.snapshot.params['id'];
-      const res = this.pessoaService.buscarPorId(id);
-      if(res !== undefined)
-        this.pessoa = res;
-      else
-        throw new Error ("Pessoa não encontrada: id = " + id);
+    this.pessoaService.buscarPorId(this.id).subscribe((pessoa: Pessoa) => {
+      this.pessoa = pessoa;
+    });
   }
 
   atualizar(): void {
